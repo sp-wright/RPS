@@ -152,6 +152,8 @@ img {
 
 .result button {
   border-radius: 10px;
+  background: #f1f1f1;
+  border: solid 1px #f1f1f1;
   font-weight: 400;
   font-size: 1rem;
   padding: 0.75rem 3rem;
@@ -185,6 +187,7 @@ img {
   position: absolute;
   bottom: 25px;
   right: 25px;
+  border: solid 1px #f1f1f1;
 }
 
 .rules-btn:hover {
