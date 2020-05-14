@@ -1,0 +1,308 @@
+body {
+  margin: 0;
+  background: radial-gradient(circle at top, hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+  color: #f1f1f1;
+  font-family: "Barlow Semi Condensed", sans-serif;
+  display: block;
+  margin: auto;
+  text-transform: uppercase;
+  height: 95vh;
+}
+
+button {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  cursor: pointer;
+}
+
+/*********************************** HEADER ***********************************/
+
+.heading {
+  border: solid 2px hsl(217, 16%, 45%);
+  margin: 5vh auto 5vh auto;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+}
+
+.title {
+  width: 15rem;
+  margin: 2.5rem 0 2.5rem 3rem;
+}
+
+.title h1 {
+  margin: 0;
+  line-height: 1.7rem;
+}
+
+.score {
+  background-color: #f1f1f1;
+  border-radius: 20px;
+  color: hsl(229, 25%, 31%);
+  text-align: center;
+  width: 10rem;
+  height: 8rem;
+  align-self: center;
+  margin-right: 3rem;
+}
+
+.score-num {
+  font-size: 3.25rem;
+  margin: 0;
+}
+
+.score-title {
+  color: hsl(229, 64%, 46%);
+  margin-bottom: 0;
+}
+
+/*********************************** GAME ***********************************/
+
+img {
+  position: relative;
+  top: 30%;
+}
+
+.game {
+  width: 700px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "paper scissors" "rock rock";
+  justify-content: space-around;
+  justify-items: center;
+  position: relative;
+}
+
+.paper,
+.scissors,
+.rock {
+  background-color: #f1f1f1;
+  height: 150px;
+  width: 150px;
+  border-radius: 100%;
+  -moz-box-shadow: inset 0 0 10px #000000;
+  -webkit-box-shadow: inset 0 0 10px #000000;
+  box-shadow: inset 0 7px 2px rgba(0, 0, 0, 0.205);
+  text-align: center;
+}
+
+.paper-mgn {
+  border: solid 18px hsl(230, 89%, 62%);
+  grid-area: paper;
+  margin-right: -100px;
+}
+
+.scissors-mgn {
+  border: solid 18px hsl(39, 89%, 49%);
+  grid-area: scissors;
+  margin-left: -100px;
+}
+
+.rock-mgn {
+  border: solid 18px hsl(349, 71%, 52%);
+  grid-area: rock;
+}
+
+.bg-triangle-img {
+  position: absolute;
+  width: 300px;
+  height: 272px;
+  left: 29%;
+  top: 17%;
+  z-index: -1;
+}
+
+/*********************************** RESULT ***********************************/
+
+.result {
+  width: 60%;
+  margin: auto;
+  text-align: center;
+  display: grid;
+  grid-row-gap: 50px;
+  grid-template-areas:
+    "a . b"
+    "c d e";
+}
+
+.user-heading {
+  grid-area: a;
+}
+
+.house-heading {
+  grid-area: b;
+}
+
+#p1 {
+  grid-area: c;
+  margin: auto;
+}
+
+#p2 {
+  grid-area: e;
+  margin: auto;
+}
+
+.result-title {
+  grid-area: d;
+  display: flexbox;
+  flex-direction: column;
+}
+
+.result button {
+  border-radius: 10px;
+  font-weight: 400;
+  font-size: 1rem;
+  padding: 0.75rem 3rem;
+}
+
+.result-paper {
+  border: solid 18px hsl(230, 89%, 62%);
+}
+
+.result-scissors {
+  border: solid 18px hsl(39, 89%, 49%);
+}
+
+.result-rock {
+  border: solid 18px hsl(349, 71%, 52%);
+}
+
+.winner {
+  z-index: -1;
+  box-shadow: 0px 0px 0px 60px hsla(214, 47%, 26%, 0.267), 0px 0px 0px 120px hsla(214, 47%, 26%, 0.267), 0px 0px 0px 180px hsla(214, 47%, 26%, 0.267);
+}
+
+/*********************************** RULES ***********************************/
+
+.rules-btn {
+  color: #f1f1f1;
+  background: none;
+  font-size: 1.5rem;
+  border-radius: 5px;
+  padding: 1vh 5vh;
+  position: absolute;
+  bottom: 25px;
+  right: 25px;
+}
+
+.rules-btn:hover {
+  background: #f1f1f1;
+  color: hsl(229, 64%, 46%);
+}
+
+.rules-popup {
+  position: absolute;
+  display: inline;
+  width: 400px;
+  top: 20%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: 10;
+  background-color: #f1f1f1;
+  border-radius: 20px;
+  box-shadow: 0 0 0 100vh rgba(0, 0, 0, 0.548);
+  visibility: hidden;
+}
+
+.rules-popup.active {
+  visibility: visible;
+}
+
+.rules-heading {
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  width: 80%;
+}
+
+.rules-popup h1 {
+  color: hsl(228, 4%, 53%);
+}
+
+.rules-cross {
+  color: hsl(233, 10%, 69%);
+  align-self: center;
+}
+
+.rules-cross:hover {
+  color: hsl(229, 64%, 46%);
+  cursor: pointer;
+}
+
+.rules-img {
+  display: block;
+  margin: auto;
+  margin-bottom: 4rem;
+  margin-top: 3rem;
+}
+
+/*********************************** MEDIA ***********************************/
+
+@media (max-width: 1000px) {
+  .result {
+    width: 75%;
+    grid-row-gap: 10px;
+    grid-column-gap: 0;
+    grid-template-areas:
+      "a . b"
+      "c . e"
+      ". d .";
+  }
+
+  .result button {
+    border-radius: 10px;
+    font-weight: 400;
+    font-size: 1rem;
+    padding: 2rem 2rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .game {
+    width: 450px;
+    margin: auto;
+    padding-top: 50px;
+    display: grid;
+    grid-gap: 50px;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-around;
+    justify-items: center;
+    position: relative;
+  }
+
+  img {
+    position: relative;
+    top: 20%;
+  }
+
+  .paper,
+  .scissors,
+  .rock {
+    height: 90px;
+    width: 90px;
+  }
+
+  .paper-mgn {
+    margin-right: -100px;
+  }
+
+  .scissors-mgn {
+    margin-left: -100px;
+  }
+
+  .rock-mgn {
+    grid-area: rock;
+  }
+
+  .bg-triangle-img {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    left: 28%;
+    top: 25%;
+    z-index: -1;
+  }
+}
