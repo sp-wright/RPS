@@ -157,6 +157,7 @@ img {
   font-weight: 400;
   font-size: 1rem;
   padding: 0.75rem 3rem;
+  color: hsl(229, 64%, 46%);
 }
 
 .result-paper {
@@ -259,7 +260,7 @@ img {
     border-radius: 10px;
     font-weight: 400;
     font-size: 1rem;
-    padding: 2rem 2rem;
+    padding: 0.5rem 2.5rem;
   }
 }
 
@@ -298,6 +299,15 @@ img {
 
   .rock-mgn {
     grid-area: rock;
+  }
+
+  .user-heading,
+  .house-heading {
+    font-size: 0.6rem;
+  }
+
+  .result-dec {
+    font-size: 1.5rem;
   }
 
   .bg-triangle-img {
